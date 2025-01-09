@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+            <div class="container"> 
+                <img class="art" src="{{.Artist.Image}}" alt="{{.Artist.Name}}" width="100">
+                <h2 class="text">{{.Artist.Name}}</h3>
+                        <div class="text"><span class="label"><h3>Members:</h3> </span> 
+                            {{range .Artist.Members}}
+                            <strong>    <div>{{.}}</div>   </strong>
+                            {{end}}
+                        </div>
+                        <div class="text"><span class="label">  <h3>Creation Date:</h3></span> 
+                            <li> <strong>{{.Artist.CreationDate}}</strong> </li>
+                        </div>
+                        <div class="text"><span class="label"> <h3> First Album: </h3> </span>
+                            <li> <strong>{{.Artist.FirstAlbum}}</strong> </li>
+                        </div>
+
+                        <div class="text"><span class="label"> <h3>Locations:</h3> </span>
+                            <ul>
+                                {{range $value := .Locations.Location}}
+                                <li>
+                                    <strong>{{$value}}</strong>
+                                </li>
+                                {{end}}
+                            </ul>
+                        </div>
+                        <div class="text"><span class="label"> <h3>ConcertDates:</h3> </span>
+                            <ul>
+                                {{range $key, $value := .ConcertDates.ConcertDate}}
+                                <li><strong>{{$value}}</strong>
+                                </li>
+                                {{end}}
+                            </ul>
+                        </div>
+                        <div class="text"><span class="label"> <h3>Relations:</h3></span>
+                            <ul>
+                                {{range $key, $value := .Relations.DatesLocations}}
+                                    <li><strong>{{$key}}:</strong>
+                                        <ul>
+                                            {{range $date := $value}}
+                                                <li>{{$date}}</li>
+                                            {{end}}
+                                        </ul>
+                                    </li>
+                                {{end}}
+                            </ul>
+                        </div>
+                 </div>
+</body>
+</html>

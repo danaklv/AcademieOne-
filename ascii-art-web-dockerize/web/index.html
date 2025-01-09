@@ -1,0 +1,44 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="mainpage">
+    <h1 style="font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 35px;">ASCII Art Web</h1>
+      <h1 style="font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      font-size: 32px;">Welcome to Our Website</h1>
+
+
+    <p>ASCII Art Web is a web application that allows users to create ASCII graphical representation.</p>
+    <p><strong>Usage:</strong> input text and select a banner type, then generate ASCII art by submitting the form.</p>
+
+
+
+    <form action="/ascii-art" method="post">
+        <textarea name="input" class="inputArea" placeholder="Enter a text..." cols="50" rows="5" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+        <select name="choice" id="selectChoice">
+            <option value="standard">Standard</option>
+            <option value="shadow">Shadow</option>
+            <option value="thinkertoy">Thinkertoy</option>
+        </select> 
+   </form> 
+
+   <br>
+   
+
+</div>
+</div>
+
+
+</body>
+</html> 

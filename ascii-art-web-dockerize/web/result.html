@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII-ART-WEB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #222122;" > 
+
+    <div class="result">
+    
+        <pre>{{.Result}}</pre>
+    </div>
+
+    <form action="/download-sample" method="get" style="position: relative; right: 45%;">
+        <button type="submit">Download File</button>
+    </form>
+  
+    <form method="post" style="position: relative; right: 45%; margin-top: 20px;">
+        <button type="button" onclick="history.go(-1)">Go Back</button>
+    </form>
+    
+</body>
+</html> 
+

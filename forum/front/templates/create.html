@@ -1,0 +1,39 @@
+{{ define "create" }}
+{{ template "header" }}
+{{ template "topheader" }}
+<div class="form-create">
+    <h3>New post</h3>
+    <form action="/newpost" method="post">
+        <div class="input-create">
+            <input type="text" name="title" id="title" maxlength="50" required oninput="updateCharCount('title', 'title-count', 50)" placeholder="Post topic"> <br>
+            <div id="title-count" class="char-count">50 characters left</div> <br>
+            
+            <textarea name="abstract" id="abstract" maxlength="300" required oninput="updateCharCount('abstract', 'abstract-count', 300)" placeholder="Write an annotation"></textarea> <br>
+            <div id="abstract-count" class="char-count">300 characters left</div> <br>
+            
+            <textarea name="full_text" id="full_text" maxlength="4000" required oninput="updateCharCount('full_text', 'full_text-count', 4000)" placeholder="Enter post text"></textarea> <br>
+            <div id="full_text-count" class="char-count">4000 characters left</div>
+            <script>
+                function updateCharCount(textareaId, countId, maxLength) {
+                    var textarea = document.getElementById(textareaId);
+                    var count = document.getElementById(countId);
+                    var remaining = maxLength - textarea.value.length;
+                    count.textContent = remaining + ' characters left';
+                }
+                var expanded = false;
+            </script>
+        </div>
+        <label class="Kategory" for="category">Category:</label>
+        <div class="checkboxes" id="checkboxes">
+            <label for="trends"><input type="checkbox" name="category" id="trends" value="Trends"/>Trends</label>
+            <label for="sport"><input type="checkbox" name="category" id="sport" value="Sport"/>Sport</label>
+            <label for="humor"><input type="checkbox" name="category" id="humor" value="Humor"/>Humor</label>
+            <label for="it"><input type="checkbox" name="category" id="it" value="IT"/>IT</label>
+        </div> 
+
+        <br>
+        <button class="btn">Add</button>
+    </form>
+</div>
+
+{{ end }}
